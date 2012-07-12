@@ -53,6 +53,16 @@
             
                 that.timeslider('option', 'timeDisplay').text(startTime + ' - ' + endTime);
 				
+                if(that.timeslider('option', 'startInput'))
+				{
+                	$(that.timeslider('option', 'startInput')).val(startTime);
+				}
+                
+                if(that.timeslider('option', 'endInput'))
+				{
+                	$(that.timeslider('option', 'endInput')).val(endTime);
+				}
+                
 				if(that.timeslider('option', 'addInputs'))
 				{
 					that.timeslider('option', 'inputsContainer').find('input.start_time').val(startTime);
@@ -98,7 +108,7 @@
             addInputs: false,
 			clockFormat: 12,
 			startTime: null,
-			endTime: null
+			endTime: null,
         },
         _create: function() {
             var that = this,
@@ -157,4 +167,3 @@
         }
     });
 })(jQuery);
-    
